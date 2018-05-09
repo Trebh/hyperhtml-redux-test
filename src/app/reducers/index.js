@@ -1,8 +1,8 @@
 import * as Redux from 'redux';
-import count from './count';
+import todos from './todos';
 
 const reducers = Redux.combineReducers({
-  count,
+  todos,
 });
 
 export default reducers;

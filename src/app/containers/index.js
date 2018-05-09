@@ -1,14 +1,15 @@
 import { wire } from 'hyperhtml/esm';
 import * as actions from '../actions';
-import { Counter } from '../components';
+import store from '../store';
+import { TodoList } from '../components';
 
 export default class App {
   constructor() {
-    this.counter = new Counter(actions);
+    this.todoList = new TodoList(store.getState().todos, actions);
   }
   render() {
     return wire(this)`
-    ${this.counter.render()}
+    ${this.todoList.render()}
     `;
   }
 }

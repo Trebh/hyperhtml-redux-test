@@ -4,6 +4,9 @@ const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const RESET = 'RESET';
 
+const ADD_TODO = 'ADD_TODO';
+const REMOVE_TODO = 'REMOVE_TODO';
+
 export function inc() {
   store.dispatch({
     type: INCREMENT,
@@ -17,5 +20,19 @@ export function dec() {
 export function res() {
   store.dispatch({
     type: RESET,
+  });
+}
+
+export function addTodo(title) {
+  store.dispatch({
+    type: ADD_TODO,
+    title,
+  });
+}
+
+export function removeTodo(title) {
+  store.dispatch({
+    type: REMOVE_TODO,
+    title,
   });
 }
