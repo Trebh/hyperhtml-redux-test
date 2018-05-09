@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    // Additional, per-project rules...
+    "no-use-before-define": ["error", { "functions": false }],
+    array-element-newline: ["error", { "multiline": true, "minItems": 3 }],
+    "no-useless-return": "off",
+    "no-underscore-dangle": ["error", { "allow": ["__"]}],
+    "no-unused-expressions": ["error", {"allowTaggedTemplates": true}]
+  },
+  "globals": {
+    "angular": true
+  }
+
+}

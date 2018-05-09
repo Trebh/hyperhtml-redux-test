@@ -1,0 +1,33 @@
+{
+  "name": "vanilla-redux",
+  "version": "1.0.0",
+  "description": "testing around with redux",
+  "main": "src/app/app.js",
+  "scripts": {
+    "build-dev": "webpack --mode=development",
+    "start-dev": "webpack-dev-server --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Riccardo Agnoletto",
+  "license": "ISC",
+  "dependencies": {
+    "hyperhtml": "^2.10.0",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.11",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
