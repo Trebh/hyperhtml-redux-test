@@ -10,6 +10,6 @@ store.subscribe(render);
 
 function render() {
   bind(document.querySelector('#app'))`
-  <div class="app__container">${app.render()}</div>
-`;
+    <div class="app__container">${app.render()}</div>
+  `;
 }

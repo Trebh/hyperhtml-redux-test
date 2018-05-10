@@ -3,13 +3,13 @@ import { wire } from 'hyperhtml/esm';
 export default class Todo {
   constructor(props, actions) {
     this.props = props;
-    this.actions = actions;
+    this.removeTodo = title => () => actions.removeTodo(title);
   }
   render() {
     return wire()`
       <div class="todo__container">
-        <div class="todo__text">${this.props.title}</div>
-        <div class="todo__delete" onClick=${this.actions.removeTodo}>X</div>
+        <span class="todo__text">${this.props.title}</span>
+        <span class="todo__delete" onClick=${this.removeTodo(this.props.title)}>&nbsp;X</span>
       </div>
     `;
   }

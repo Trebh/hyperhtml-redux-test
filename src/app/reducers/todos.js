@@ -1,14 +1,14 @@
-function todos(state = { todos: [] }, action) {
+function todos(state = [], action) {
   switch (action.type) {
     case 'ADD_TODO': {
       const newTodo = {
         title: action.title,
       };
-      return Object.assign({}, state, { todos: [...state.todos, newTodo] });
+      return [...state, newTodo];
     }
     case 'REMOVE_TODO': {
-      const filteredTodos = todos.filter(todo => todo.title !== action.title);
-      return Object.assign({}, state, { todos: filteredTodos });
+      const filteredTodos = state.filter(todo => todo.title !== action.title);
+      return filteredTodos;
     }
     default:
       return state;

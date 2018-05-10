@@ -1,15 +1,18 @@
 import { wire } from 'hyperhtml/esm';
 import * as actions from '../actions';
 import store from '../store';
-import { TodoList } from '../components';
+import { TodoList, Input } from '../components';
 
 export default class App {
   constructor() {
-    this.todoList = new TodoList(store.getState().todos, actions);
+    this.input = new Input('insert a new todo', actions.addTodo);
   }
   render() {
+    this.todoList = new TodoList(store.getState().todos, actions);
+
     return wire(this)`
-    ${this.todoList.render()}
+    <div>${this.input.render()}</div>
+    <div>${this.todoList.render()}</div>
     `;
   }
 }
