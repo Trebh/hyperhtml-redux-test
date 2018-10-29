@@ -1,20 +1,12 @@
-const debug = process.env.NODE_ENV !== 'production';
-const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   context: __dirname,
-  devtool: debug ? 'inline-sourcemap' : null,
   entry: './src/app/app.js',
   output: {
     path: `${__dirname}/dist`,
     filename: 'bundle.js',
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000,
   },
   module: {
     rules: [
@@ -36,11 +28,4 @@ module.exports = {
       },
     ],
   },
-  plugins: debug ? [
-    new BundleAnalyzerPlugin(),
-  ] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
 };
