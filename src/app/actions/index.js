@@ -6,6 +6,7 @@ const RESET = 'RESET';
 
 export const ADD_TODO = 'ADD_TODO';
 export const REMOVE_TODO = 'REMOVE_TODO';
+export const LOCATION_CHANGE = 'LOCATION_CHANGE';
 
 export function inc() {
   store.dispatch({
@@ -34,5 +35,12 @@ export function removeTodo(title) {
   store.dispatch({
     type: REMOVE_TODO,
     title,
+  });
+}
+
+export function goTo(state) {
+  store.dispatch({
+    type: LOCATION_CHANGE,
+    state,
   });
 }

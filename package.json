@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "hyperhtml": "^2.10.0",
+    "navigo": "^7.1.2",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0"
   },
@@ -30,9 +31,10 @@
     "eslint-plugin-react": "^7.7.0",
     "file-loader": "^1.1.11",
     "redux-devtools-extension": "^2.13.2",
-    "tape": "^4.9.1",
     "tap-spec": "^5.0.0",
+    "tape": "^4.9.1",
     "webpack": "^4.6.0",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3"
   }

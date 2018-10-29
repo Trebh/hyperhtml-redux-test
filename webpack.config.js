@@ -1,6 +1,7 @@
 const debug = process.env.NODE_ENV !== 'production';
 const path = require('path');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   context: __dirname,
@@ -35,7 +36,9 @@ module.exports = {
       },
     ],
   },
-  plugins: debug ? [] : [
+  plugins: debug ? [
+    new BundleAnalyzerPlugin(),
+  ] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
